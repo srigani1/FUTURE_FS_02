@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
-useEffect(() => {
-  if (!localStorage.getItem("token")) {
-    window.location.href = "/FUTURE_FS_02/";
-  }
-}, []);function Dashboard() {
+
+function Dashboard() {
+
   const [leads, setLeads] = useState([]);
 
   const [formData, setFormData] = useState({
@@ -15,7 +13,14 @@ useEffect(() => {
     notes: "",
   });
 
-  const API = "https://srigani1-mini-crm-backend.onrender.com/api/leads";
+  useEffect(() => {
+    if (!localStorage.getItem("token")) {
+      window.location.href = "/FUTURE_FS_02/";
+    }
+  }, []);
+
+  const API =
+    "https://srigani1-mini-crm-backend.onrender.com/api/leads";
 
   const fetchLeads = async () => {
     try {
