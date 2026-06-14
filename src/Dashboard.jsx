@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
-
-if (!localStorage.getItem("token")) {
-  window.location.href = "/FUTURE_FS_02/";
-}
-
-function Dashboard() {
+useEffect(() => {
+  if (!localStorage.getItem("token")) {
+    window.location.href = "/FUTURE_FS_02/";
+  }
+}, []);function Dashboard() {
   const [leads, setLeads] = useState([]);
 
   const [formData, setFormData] = useState({

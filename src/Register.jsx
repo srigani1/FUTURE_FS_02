@@ -21,7 +21,7 @@ function Register() {
 
       alert("Registration Successful!");
 
-      window.location.href = "/";
+      window.location.href = "/FUTURE_FS_02/";
     } catch (error) {
       alert("Registration Failed");
     }

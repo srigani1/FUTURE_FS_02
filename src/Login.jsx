@@ -1,5 +1,11 @@
-import { useState } from "react";
 import axios from "axios";
+import { useState, useEffect } from "react";
+
+useEffect(() => {
+  if (localStorage.getItem("token")) {
+    window.location.href = "/FUTURE_FS_02/dashboard";
+  }
+}, []);
 
 function Login() {
   const [email, setEmail] = useState("");
